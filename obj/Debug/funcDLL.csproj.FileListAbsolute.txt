@@ -4,3 +4,9 @@ C:\Users\Patrick\Documents\GitHub\funcDLL\obj\Debug\funcDLL.csprojAssemblyRefere
 C:\Users\Patrick\Documents\GitHub\funcDLL\obj\Debug\funcDLL.csproj.CoreCompileInputs.cache
 C:\Users\Patrick\Documents\GitHub\funcDLL\obj\Debug\funcDLL.dll
 C:\Users\Patrick\Documents\GitHub\funcDLL\obj\Debug\funcDLL.pdb
+D:\Patrick\GitHub\funcDLL\bin\Debug\funcDLL.dll
+D:\Patrick\GitHub\funcDLL\bin\Debug\funcDLL.pdb
+D:\Patrick\GitHub\funcDLL\obj\Debug\funcDLL.csprojAssemblyReference.cache
+D:\Patrick\GitHub\funcDLL\obj\Debug\funcDLL.csproj.CoreCompileInputs.cache
+D:\Patrick\GitHub\funcDLL\obj\Debug\funcDLL.dll
+D:\Patrick\GitHub\funcDLL\obj\Debug\funcDLL.pdb
