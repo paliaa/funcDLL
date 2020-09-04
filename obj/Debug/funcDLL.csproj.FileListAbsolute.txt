@@ -1,0 +1,6 @@
+C:\Users\Patrick\Documents\GitHub\funcDLL\bin\Debug\funcDLL.dll
+C:\Users\Patrick\Documents\GitHub\funcDLL\bin\Debug\funcDLL.pdb
+C:\Users\Patrick\Documents\GitHub\funcDLL\obj\Debug\funcDLL.csprojAssemblyReference.cache
+C:\Users\Patrick\Documents\GitHub\funcDLL\obj\Debug\funcDLL.csproj.CoreCompileInputs.cache
+C:\Users\Patrick\Documents\GitHub\funcDLL\obj\Debug\funcDLL.dll
+C:\Users\Patrick\Documents\GitHub\funcDLL\obj\Debug\funcDLL.pdb
