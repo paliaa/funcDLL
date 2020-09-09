@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,6 +45,56 @@ namespace BarPlus.funcDLL
             }
 
             return textBox;
+        }
+
+        public static string LogWrite_Info(string log)
+        {
+
+            StringBuilder sb = new StringBuilder();
+            string m_exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string filePath = m_exePath + "\\" + "log.txt";
+
+            DateTime now = DateTime.Now;
+
+            sb.Append(now + " | INFO: " + log);
+
+            File.AppendAllText(filePath, sb.ToString());
+            sb.Clear();
+
+            return log;
+        }
+
+        public static string LogWrite_Warning(string log)
+        {
+
+            StringBuilder sb = new StringBuilder();
+            string m_exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string filePath = m_exePath + "\\" + "log.txt";
+
+            DateTime now = DateTime.Now;
+
+            sb.Append(now + " | WARNING: " + log);
+
+            File.AppendAllText(filePath, sb.ToString());
+            sb.Clear();
+
+            return log;
+        }
+
+        public static string LogWrite_Error(string log)
+        {
+            StringBuilder sb = new StringBuilder();
+            string m_exePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string filePath = m_exePath + "\\" + "log.txt";
+
+            DateTime now = DateTime.Now;
+
+            sb.Append(now + " | ERROR: " + log);
+
+            File.AppendAllText(filePath, sb.ToString());
+            sb.Clear();
+
+            return log;
         }
     }
 }
