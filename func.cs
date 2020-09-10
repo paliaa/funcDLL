@@ -56,7 +56,7 @@ namespace BarPlus.funcDLL
 
             DateTime now = DateTime.Now;
 
-            sb.Append(now + " | INFO: " + log);
+            sb.Append(now + " | INFO: " + log + "\n");
 
             File.AppendAllText(filePath, sb.ToString());
             sb.Clear();
@@ -73,7 +73,7 @@ namespace BarPlus.funcDLL
 
             DateTime now = DateTime.Now;
 
-            sb.Append(now + " | WARNING: " + log);
+            sb.Append(now + " | WARNING: " + log + "\n)");
 
             File.AppendAllText(filePath, sb.ToString());
             sb.Clear();
@@ -89,7 +89,7 @@ namespace BarPlus.funcDLL
 
             DateTime now = DateTime.Now;
 
-            sb.Append(now + " | ERROR: " + log);
+            sb.Append(now + " | ERROR: " + log + "\n");
 
             File.AppendAllText(filePath, sb.ToString());
             sb.Clear();
