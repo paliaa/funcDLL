@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace BarPlus.funcDLL
 {
@@ -47,6 +48,46 @@ namespace BarPlus.funcDLL
             return textBox;
         }
 
+        public static double getPrice(int group, int prod, double priceTb)
+        {
+            char[] separator = { '.', ',' };
+            Int32 count = 2;
+
+            //generate the connection string
+            string connectionString = "SERVER=localhost;DATABASE=barplus;UID=root;PASSWORD=mima10492;";
+
+            //create a MySQL connection with a query string
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            //create string Query
+            string getValue = "select p_price FROM t_products WHERE p_groupid = " + group + " AND p_id = " + prod;
+
+            //MySQLCommand
+            MySqlCommand cmdPrice = new MySqlCommand(getValue, connection);
+
+            //open the connection
+            connection.Open();
+
+            string prodPrice = cmdPrice.ExecuteScalar().ToString();
+
+            //close the connection
+            connection.Close();
+
+            //Todo Null bei einstelliger Decimal hinzufügen
+            String[] strlist = prodPrice.Split(separator, count, StringSplitOptions.None);
+
+            if (prodPrice.Contains(",") == false)
+            {
+                priceTb = Convert.ToDouble(strlist[0] + ",0");
+            }
+            else
+            {
+                priceTb = Convert.ToDouble(strlist[0] + "," + strlist[1]);
+            }
+            return priceTb;
+        }
+
+        #region LogWriter
         public static string LogWrite_Info(string log)
         {
 
@@ -96,5 +137,6 @@ namespace BarPlus.funcDLL
 
             return log;
         }
+        #endregion
     }
 }
