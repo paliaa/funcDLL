@@ -87,6 +87,31 @@ namespace BarPlus.funcDLL
             return priceTb;
         }
 
+        public static string getProdName(int group, int prod, string prodName)
+        {
+            //generate the connection string
+            string connectionString = "SERVER=localhost;DATABASE=barplus;UID=root;PASSWORD=mima10492;";
+
+            //create a MySQL connection with a query string
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            //create string Query
+            string getName = "select p_name FROM t_products WHERE p_groupid = " + group + " AND p_id = " + prod;
+
+            //MySQLCommand
+            MySqlCommand cmdName = new MySqlCommand(getName, connection);
+
+            //open the connection
+            connection.Open();
+
+            prodName = cmdName.ExecuteScalar().ToString();
+
+            //close the connection
+            connection.Close();
+
+            return prodName;
+        }
+
         #region LogWriter
         public static string LogWrite_Info(string log)
         {
